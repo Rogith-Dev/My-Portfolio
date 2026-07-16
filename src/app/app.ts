@@ -87,15 +87,29 @@ export class App {
 
   protected readonly projects: Project[] = [
     {
-      title: 'Portfolio Website',
-      description: 'A modern portfolio website built to showcase skills, services, and contact details.',
-      href: '#'
+      title: 'Quality Management System ( QMS )',
+      description: `The Quality Management System (QMS) is a full-stack web and mobile application designed to streamline quality assurance and project management processes across multiple teams. The platform enables organizations to manage projects, documents, inspections, and quality records through a centralized, role-based system.`,
+      href: 'https://www.imirisoft.com/'
     },
     {
-      title: 'SaaS App UI',
-      description:
-        'A polished dashboard and landing page design for a startup SaaS product with clean information hierarchy.',
-      href: '#'
+      title: 'Warehouse Management System ( WMS )',
+      description: 'Developed a full-stack Warehouse Management System (WMS) using Angular, Node.js, Express.js, and MongoDB. Built features including inventory management, cycle counting, advanced reporting, responsive dashboards, and a 3D warehouse visualization using Three.js for real-time spatial inventory planning.',
+      href: 'https://shipsoft.co/modules/warehouse'
+    },
+    {
+      title: 'Welding Project Management System',
+      description: 'Developed a full-stack Welding Project Management System using Angular, Node.js, Express.js, and MongoDB. Built features including project tracking, resource allocation, advanced reporting, and responsive dashboards.',
+      href: 'https://www.weldtrace.com/'
+    },
+    {
+      title: 'Jeyam TV Mobile App',
+      description: 'Developed a full-stack Jeyam TV Mobile App using React Native, Node.js, and MongoDB. Built features including video streaming, user authentication, and responsive UI.',
+      href: 'https://play.google.com/store/apps/details?id=jeyam.app&pcampaignid=web_share'
+    },
+    {
+      title: 'Personal Projects ( AI Chatbot ) Gemini Clone',
+      description: 'Developed a full-stack AI chatbot using Angular, Node.js. Built features including natural language processing, responsive UI, and seamless integration with external APIs.',
+      href: 'https://angular-ai-chatbot.netlify.app/'
     }
   ];
 
