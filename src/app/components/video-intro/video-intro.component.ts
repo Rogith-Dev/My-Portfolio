@@ -1,10 +1,12 @@
-import { CommonModule } from '@angular/common';
+import { isPlatformBrowser, CommonModule } from '@angular/common';
 import {
   AfterViewInit,
   Component,
   ElementRef,
+  Inject,
   Input,
   OnDestroy,
+  PLATFORM_ID,
   ViewChild,
 } from '@angular/core';
 import gsap from 'gsap';
@@ -62,7 +64,13 @@ export class VideoIntroComponent implements AfterViewInit, OnDestroy {
   private timeline?: gsap.core.Timeline;
   private soundHintTimer?: ReturnType<typeof setTimeout>;
 
+  constructor(@Inject(PLATFORM_ID) private platformId: object) {}
+
   ngAfterViewInit(): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
     this.playEntranceAnimation();
 
     // Auto-hide the "click to enable sound" hint after a few seconds.
@@ -76,14 +84,18 @@ export class VideoIntroComponent implements AfterViewInit, OnDestroy {
 
   // ---- GSAP entrance -----------------------------------------------------
   private playEntranceAnimation(): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
     // Respect reduced-motion users — CSS handles the static fallback state.
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     this.timeline = gsap.timeline({ defaults: { ease: 'power3.out' } });
     this.timeline
-      .set([this.nameLine1.nativeElement, this.nameLine2.nativeElement], { yPercent: 110 })
-      .to(this.nameLine1.nativeElement, { yPercent: 0, duration: 1.1 }, 0.9)
-      .to(this.nameLine2.nativeElement, { yPercent: 0, duration: 1.1 }, 1.05);
+      .set([this.nameLine1.nativeElement, this.nameLine2.nativeElement], { yPercent: 110, opacity: 0 })
+      .to(this.nameLine1.nativeElement, { yPercent: 0, opacity: 1, duration: 1.1 }, 0.9)
+      .to(this.nameLine2.nativeElement, { yPercent: 0, opacity: 1, duration: 1.1 }, 1.05);
   }
 
   // ---- interactions -----------------------------------------------------

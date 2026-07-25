@@ -1,9 +1,12 @@
+import { isPlatformBrowser } from '@angular/common';
 import {
   AfterViewInit,
   Component,
   ElementRef,
+  Inject,
   Input,
   OnDestroy,
+  PLATFORM_ID,
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
@@ -32,7 +35,13 @@ export class CinematicLayerComponent implements AfterViewInit, OnDestroy {
 
   private engine?: ParticleEngine;
 
+  constructor(@Inject(PLATFORM_ID) private platformId: object) {}
+
   ngAfterViewInit(): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
     // Respect users who've asked for reduced motion — skip the WebGL layer entirely.
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) return;
