@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { VideoIntroComponent } from "./components/video-intro/video-intro.component";
 
 type Link = { label: string; href: string };
 type ServiceCard = { title: string; description: string[] };
@@ -9,11 +10,19 @@ type ContactLink = { label: string; value: string; href: string; icon: string };
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, VideoIntroComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
+  heroProps = {
+    firstName: 'ROGITH',
+    lastName: 'T.',
+    tagline: 'DEVELOPER PORTFOLIO — 2026',
+    subtitleText:
+      'Full-Stack Engineer crafting immersive web experiences with Angular, Node.js and Three.js — turning interface into atmosphere, one frame at a time.',
+    roleChips: ['Angular · NgRx · RxJS', 'Node.js · Express · MongoDB', 'Three.js · WebGL'],
+  };
   protected readonly navLinks: Link[] = [
     { label: 'Home', href: '#home' },
     { label: 'About', href: '#about' },
@@ -116,8 +125,8 @@ export class App {
   protected readonly contactLinks: ContactLink[] = [
     {
       label: 'Email',
-      value: 'tdrrohit@gmail.com',
-      href: 'mailto:tdrrohit@gmail.com',
+      value: 'rogith.it@gmail.com',
+      href: 'mailto:rogith.it@gmail.com',
       icon: '✉️'
     },
     {

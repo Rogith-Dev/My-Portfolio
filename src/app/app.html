@@ -1,4 +1,9 @@
-﻿<div class="min-h-screen bg-slate-950 text-slate-100">
+﻿<app-video-intro [firstName]="heroProps.firstName" [lastName]="heroProps.lastName" [tagline]="heroProps.tagline"
+  [subtitleText]="heroProps.subtitleText" [roleChips_data]="heroProps.roleChips" mainImage="assets/hero-photo.jpg"
+  bgImage="assets/hero-photo-blur.jpg" nextSectionSelector="#next-section">
+</app-video-intro>
+
+<div class="min-h-screen bg-slate-950 text-slate-100">
   <div class="relative overflow-hidden">
     <div
       class="pointer-events-none absolute inset-x-0 top-0 h-96 bg-[radial-gradient(circle_at_top_left,_rgba(56,189,248,0.24),_transparent_35%)] blur-3xl">
@@ -7,7 +12,7 @@
       class="pointer-events-none absolute inset-y-0 right-0 w-72 bg-[radial-gradient(circle_at_center,_rgba(168,85,247,0.18),_transparent_40%)] blur-3xl">
     </div>
     <div class="relative mx-auto max-w-7xl px-6 py-8">
-      <header class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+      <!-- <header class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
         <a
           class="inline-flex items-center gap-3 rounded-full border border-slate-700 bg-slate-900/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-cyan-300 shadow-lg shadow-cyan-400/10">
           Rogith T
@@ -15,14 +20,14 @@
         <nav class="flex flex-wrap gap-4 text-sm text-slate-300/80">
           <a *ngFor="let link of navLinks" [href]="link.href" class="transition hover:text-white">{{ link.label }}</a>
         </nav>
-      </header>
+      </header> -->
 
       <main class="mt-16 space-y-20">
-        <section id="home" class="grid gap-10 lg:grid-cols-[1.35fr_0.85fr] lg:items-center">
+        <!-- <section id="home" class="grid gap-10 lg:grid-cols-[1.35fr_0.85fr] lg:items-center">
           <div class="space-y-8">
             <p
               class="inline-flex items-center gap-2 rounded-full bg-cyan-500/10 px-4 py-2 text-sm font-semibold text-cyan-200 ring-1 ring-cyan-500/20">
-              Immediate Joiner  |  Open to Work
+              Immediate Joiner | Open to Work
             </p>
             <div class="space-y-6">
               <h1 class="text-5xl font-black tracking-tight text-white sm:text-6xl">{{ heroTitle }}</h1>
@@ -52,7 +57,7 @@
                 }}</span>
             </div>
           </div>
-        </section>
+        </section> -->
 
         <section id="about" class="space-y-8">
           <div class="space-y-3">
@@ -129,7 +134,7 @@
               <p class="mt-4 text-slate-300">{{ contact.value }}</p>
             </a>
           </div>
-          <p class="text-sm text-slate-500">Email: tdrrohit@gmail.com · Address: Medavakkam, Chennai - 600100, India</p>
+          <p class="text-sm text-slate-500">Email: rogith.it@gmail.com · Address: Medavakkam, Chennai - 600100, India</p>
         </section>
       </main>
 
