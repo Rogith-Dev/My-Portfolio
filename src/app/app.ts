@@ -118,7 +118,7 @@ export class App {
     {
       title: 'Personal Projects ( AI Chatbot ) Gemini Clone',
       description: 'Developed a full-stack AI chatbot using Angular, Node.js. Built features including natural language processing, responsive UI, and seamless integration with external APIs.',
-      href: 'https://angular-ai-chatbot.netlify.app/'
+      href: 'https://angular-ai-chatbot-eight.vercel.app/'
     }
   ];
 
